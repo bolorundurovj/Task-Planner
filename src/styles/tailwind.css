@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.navigation_wrapper {
+    @apply flex justify-between mb-6 text-xl font-semibold;
+}
+
+.day_card_wrapper {
+    @apply flex flex-col p-1 shadow-md rounded-lg cursor-pointer;
+}
+
+.same_day {
+    @apply border-solid border-2 border-gray-600;
+}
+
+.not_same_month {
+    @apply shadow-sm opacity-25;
+}
+
+.day_number {
+    @apply text-base mb-auto text-center;
+}
+
+.task_icon {
+    @apply flex flex-col items-center;
+}
+
+.calendar_nav_wrapper {
+    @apply h-full p-4 grid grid-cols-3 gap-4;
+    grid-template-rows: auto repeat(4, minmax(0, 1fr));
+}
+
+.calendar_nav_cell {
+    @apply flex justify-center items-center text-xl font-medium bg-gray-100 shadow-md cursor-pointer;
+}
+
+.calendar_nav {
+    @apply flex justify-between col-span-3 text-xl;
+}
+
+.modal_close_wrapper {
+    @apply flex justify-end items-center p-2 pr-3 shadow-md bg-gradient-to-r from-gray-200 rounded-b-md cursor-pointer;
+}
+
+.chevron_icon {
+    @apply cursor-pointer pt-1;
+}
+
+.form_input {
+    @apply appearance-none block flex-grow border rounded py-3 px-4 leading-tight;
+}
+
+.form_submit_button {
+    @apply bg-white w-1/5 ml-6 text-gray-800 font-medium py-2 border border-gray-400 rounded shadow;
+}
+
+.radio_button {
+    @apply mr-2 w-4 h-4 rounded-full border-solid border-2 cursor-pointer;
+}
+
+.radio_button_checked {
+    box-shadow: inset 0 0 0 2px white;
+}
+
+.task_list_element {
+    @apply flex justify-between items-center py-2 px-4 mb-2 rounded bg-gradient-to-r from-white via-white border-solid border-2;
+}
+
+.free_day_wrapper {
+    @apply w-full h-8 mb-4 rounded-lg relative;
+}
+
+.free_day_checkbox {
+    @apply appearance-none w-full h-8 outline-none rounded-lg relative cursor-pointer;
+    transition:.25s -.1s;
+}
+
+.checkbox_label {
+    @apply  shadow-md;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+
+.free_day_checkbox:before,
+.free_day_checkbox:after {
+    z-index:2;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    color: #fff;
+    font-size: 14px;
+}
+
+.free_day_checkbox:before {
+    content: 'FREE DAY';
+    left: 1rem;
+    color: #000;
+}
+
+.free_day_checkbox:after {
+    content: 'WORK DAY';
+    right: 1rem;
+    color: #fff;
+}
+
+.free_day_checkbox:checked {
+    border: 1px solid #4fd1c5;
+}
+
+.free_day_checkbox:checked:before {
+    color: #fff;
+    transition: color .5s .2s;
+}
+
+.free_day_checkbox:checked:after {
+    color: #cbd5e0;
+    transition: color .5s;
+}
+
+.free_day_checkbox:checked + .checkbox_label {
+    @apply bg-teal-400;
+    left:0;
+    right:50%;
+    transition: left .5s, right .4s .2s;
+}
+
+.free_day_checkbox:not(:checked) {
+    border: 1px solid #cbd5e0;
+    transition: border .5s -.1s;
+}
+
+.free_day_checkbox:not(:checked):before {
+    color: #cbd5e0;
+    transition: color .5s;
+}
+
+.free_day_checkbox:not(:checked):after {
+    color: #fff;
+    transition: color .5s .2s;
+}
+
+.free_day_checkbox:not(:checked) + .checkbox_label {
+    left:50%;
+    right:0;
+    background: #cbd5e0;
+    transition: left .4s .2s, right .5s, background .35s -.1s;
+}
+
+
+@screen md {
+    .day_card_wrapper {
+        @apply p-2;
+    }
+}
+
+@screen lg {
+    .navigation_wrapper {
+        @apply text-4xl;
+    }
+
+    .day_number {
+        @apply text-left text-2xl;
+    }
+
+    .task_icon {
+        @apply flex-row justify-end text-3xl;
+    }
+
+    .calendar_nav_wrapper {
+        @apply p-8 gap-8;
+    }
+
+    .calendar_nav {
+        @apply text-4xl;
+    }
+
+    .calendar_nav_cell {
+        @apply text-4xl;
+    }
+
+    .modal_close_wrapper {
+        @apply p-4 pr-8;
+    }
+
+    .radio_button {
+        @apply mr-4 w-6 h-6 rounded-full border-solid border-4;
+    }
+
+    .radio_button_checked {
+        box-shadow: inset 0 0 0 3px white;
+    }
+
+    .task_list_element {
+        @apply mb-4 text-xl;
+    }
+
+}
