@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### The data is stored in local storage. Usage of React Hooks, Context API and TypeScript.
 
 ## You can check it here:
-https://task-planner.netlify.app/
+https://studenttasktracker.netlify.app/
 
 ## or
 
